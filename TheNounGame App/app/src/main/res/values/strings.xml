@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">The Noun Game</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="image_desc">The NOUN Game</string>
+
+    <string name="txt_won">Won : </string>
+    <string name="txt_lost">Lost : </string>
+    <string name="txt_score">Score : </string>
+
+    <string name="value_won">000</string>
+    <string name="value_lost">000</string>
+    <string name="value_score">000</string>
+
+    <color name="background_color">#626260</color>
+    <color name="blue_color">#9eddf2</color>
+    <color name="white_color">#ffffff</color>
+
+    <color name="editor_color">#fffccc</color>
+
+</resources>

@@ -1,0 +1,8 @@
+font - Showcard Gothic
+c0c0bd
+
+
+person -blue - 00aeac
+place - yellow - dbca0d
+thing - green - 03af7a
+animal -red - db643a

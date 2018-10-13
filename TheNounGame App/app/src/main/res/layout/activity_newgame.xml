@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+
+    android:background="@color/background_color"
+    tools:context=".NewGameActivity">
+
+
+    <TableLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        style="@style/Animation.AppCompat.Dialog"
+        android:dividerPadding="2dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_thenoungame"
+            android:layout_margin="2dp"
+            android:id="@+id/imageView"
+            style="@style/AppTheme" />
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:id="@+id/headerTable">
+
+            <GridLayout
+                android:id="@+id/scoreLayout"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:columnCount="3"
+                android:rowCount="2"
+                android:clickable="true"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_span="1"
+                android:alignmentMode="alignBounds"
+                android:layoutMode="opticalBounds"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:rowOrderPreserved="true"
+                android:columnOrderPreserved="true">
+
+                <TextView
+                    android:id="@+id/txtWon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/txt_won"
+                    android:autoText="false"
+                    style="@style/AppTheme"
+                    android:textColor="@color/blue_color"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:focusable="false"
+                    android:typeface="sans"
+                    android:textSize="20dp"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/txtWonNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/value_won"
+                    android:autoText="false"
+                    style="@style/AppTheme"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="left"
+                    android:layout_rowWeight="1"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:textColor="@color/white_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Score"
+                    android:autoText="false"
+                    style="@style/AppTheme"
+                    android:layout_gravity="right"
+                    android:layout_rowWeight="1"
+                    android:id="@+id/txtScore"
+                    android:layout_columnWeight="1"
+                    android:gravity="center_horizontal"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/blue_color"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+
+                <TextView
+                    android:id="@+id/txtLost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/txt_lost"
+                    android:autoText="false"
+                    style="@style/AppTheme"
+                    android:textColor="@color/blue_color"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:focusable="false"
+                    android:typeface="sans"
+                    android:textSize="20dp"
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/txtLostNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/value_lost"
+                    android:autoText="false"
+                    style="@style/AppTheme"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="left"
+                    android:layout_rowWeight="1"
+                    android:textStyle="bold"
+                    android:gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:textColor="@color/white_color" />
+
+                <TextView
+                    android:id="@+id/txtScoreNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/value_score"
+                    android:autoText="false"
+                    style="@style/AppTheme"
+                    android:layout_gravity="right"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:gravity="center_horizontal"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white_color"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:typeface="sans" />
+            </GridLayout>
+        </TableRow>
+    </TableLayout>
+
+
+    <TableLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        style="@style/AppTheme"
+        android:dividerPadding="2dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/headerLayout"
+        android:orientation="horizontal">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:rowCount="4"
+            android:clickable="false"
+            android:id="@+id/editorsLayout"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:alignmentMode="alignBounds"
+            android:columnOrderPreserved="true"
+            android:orientation="horizontal"
+            android:rowOrderPreserved="true">
+
+            <!--Person-->
+            <ImageView
+                android:id="@+id/imgPerson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_person"
+                android:layout_margin="2dp"
+                style="@style/AppTheme"
+                android:layout_gravity="start"
+                android:scaleType="matrix"
+                android:layout_columnSpan="1" />
+            <LinearLayout
+                    android:id="@+id/editorPersonLayout"
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layoutMode="opticalBounds">
+
+                <ImageView
+                        android:id="@+id/imgTxtPerson"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:src="@drawable/img_txt_person"
+                        android:layout_margin="2dp"
+                        style="@style/AppTheme"
+                        android:scaleType="matrix"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_horizontal" />
+
+                <EditText
+                    android:id="@+id/editorPerson"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editor_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:background="@color/editor_color"
+                    android:gravity="center_vertical"
+                    android:inputType="textCapCharacters"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <!--Place-->
+            <ImageView
+                android:id="@+id/imgPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_place"
+                android:layout_margin="2dp"
+                style="@style/AppTheme"
+                android:layout_gravity="start"
+                android:scaleType="matrix"
+                android:layout_columnSpan="1" />
+            <LinearLayout
+                android:id="@+id/editorsPlaceLayout"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layoutMode="opticalBounds">
+
+                <ImageView
+                    android:id="@+id/imgTxtPlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/img_txt_place"
+                    android:layout_margin="2dp"
+                    style="@style/AppTheme"
+                    android:scaleType="matrix"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal" />
+
+                <EditText
+                    android:id="@+id/editorPlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editor_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:background="@color/editor_color"
+                    android:gravity="center_vertical"
+                    android:inputType="textCapCharacters"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+
+            <!--Thing-->
+            <ImageView
+                android:id="@+id/imgThing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_thing"
+                android:layout_margin="2dp"
+                style="@style/AppTheme"
+                android:layout_gravity="start"
+                android:scaleType="matrix"
+                android:layout_columnSpan="1" />
+            <LinearLayout
+                android:id="@+id/editorsThingLayout"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgTxtThing"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/img_txt_thing"
+                    android:layout_margin="2dp"
+                    style="@style/AppTheme"
+                    android:scaleType="matrix"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal" />
+
+                <EditText
+                    android:id="@+id/editorThing"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editor_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:background="@color/editor_color"
+                    android:gravity="center_vertical"
+                    android:inputType="textCapCharacters"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+            <!--Emotion-->
+            <ImageView
+                android:id="@+id/imgEmotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_emotion"
+                android:layout_margin="2dp"
+                style="@style/AppTheme"
+                android:layout_gravity="start"
+                android:scaleType="matrix"
+                android:layout_columnSpan="1" />
+            <LinearLayout
+                android:id="@+id/editorsEmotionLayout"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imgTxtEmotion"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/img_txt_emotion"
+                    android:layout_margin="2dp"
+                    style="@style/AppTheme"
+                    android:scaleType="matrix"
+                    android:padding="5dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal" />
+
+                <EditText
+                    android:id="@+id/editorEmotion"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/editor_height"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1"
+                    android:background="@color/editor_color"
+                    android:gravity="center_vertical"
+                    android:inputType="textCapCharacters"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+        </GridLayout>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="2dp"
+        android:src="@drawable/btn_submit"
+        style="@style/AppTheme"
+        android:layout_gravity="start"
+        android:scaleType="matrix"
+        android:layout_columnSpan="1"
+        android:padding="5dp"
+        android:layout_below="@+id/mainLayout"
+        android:layout_alignParentBottom="false"
+        android:enabled="true"
+        android:focusable="true"
+        android:clickable="true"
+        android:background="@drawable/btn_submit" />
+
+</RelativeLayout>
